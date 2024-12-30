@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter';
+    background-color: #B36A5E;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    border: 0.2em solid black;
+    border-radius: 2em;
+    width: 30vw;
+    height: 70vh;
+    padding: 2.5% 5%;
+    margin-top: 5em;
+    background-color: #EEE2DF;
+}
+
+textarea {
+    display: flex;
+    align-self: center;
+    width: 95%;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 1vw;
+    background-color: #EEE2DF;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#enter {
+    cursor: pointer;
+}
+
+.enter-task {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 8%;
+    padding: 0.5%;
+    margin-bottom: 10%;
+}
+
+.this-task {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    height: 8%;
+    padding: 0.5%;
+    margin-bottom: 2%;
+    overflow: hidden; 
+}
+
+.space-between {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%; 
+}
+
+#task-name {
+    margin-left: 1em; 
+    flex-grow: 1; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+#trash {
+    cursor: pointer;
+    width: 3em;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+input[type='checkbox'] {
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+}
+
+.cross-out #task-name {
+    text-decoration: line-through;
+    color: grey;
+}
+
