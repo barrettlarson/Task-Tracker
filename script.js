@@ -1,6 +1,3 @@
-var element = document.body;
-let tasks = [];
-let numTasks = 0; 
 const textarea = document.getElementById('task-textarea');
 
 textarea.addEventListener('input', () => {
@@ -14,10 +11,9 @@ textarea.addEventListener('keydown', (event) => {
     }
 });
 
-function addTask(button) {
+function addTask() {
     const task = textarea.value.trim();
-    tasks[numTasks] = task;
-    numTasks++;
+    if (!task) return;
 
     const section = document.createElement('section');
     section.className = 'this-task';
@@ -25,23 +21,20 @@ function addTask(button) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.id = 'check';
-    checkbox.onclick = function() {
-        crossOut(this);
-    };
+    checkbox.onclick = () => crossOut(checkbox);
 
     const spaceContainer = document.createElement('div');
     spaceContainer.className = 'space-between';
 
-    const taskName = document.createElement('p');
+    const taskName = document.createElement('textarea');
     taskName.id = 'task-name';
     taskName.textContent = task;
+    taskName.rows = '1';
 
     const trashIcon = document.createElement('img');
     trashIcon.src = 'images/trash.jpg';
     trashIcon.id = 'trash';
-    trashIcon.onclick = function () {
-        removeTask(this);
-    };
+    trashIcon.onclick = () => removeTask(trashIcon);
 
     spaceContainer.appendChild(taskName);
     spaceContainer.appendChild(trashIcon);
@@ -52,32 +45,19 @@ function addTask(button) {
     main.appendChild(section);
 
     textarea.value = "";
-
 }
 
 function removeTask(trashIcon) {
     const task = trashIcon.closest('.this-task');
-    const taskName = task.querySelector('#task-name').textContent;
-    const index = tasks.indexOf(taskName);
-    
-    for(let i = index; i < numTasks - 1; i++) {
-        tasks[i] = tasks[i + 1];
-    }
-    numTasks--;
-    
     task.remove();
 }
 
 function crossOut(checkbox) {
     const taskName = checkbox.nextElementSibling.querySelector('#task-name');
-    if(checkbox.checked) {
+    if (checkbox.checked) {
         taskName.style.textDecoration = 'line-through';
         taskName.style.color = 'grey';
-    }
-
-    else {
+    } else {
         taskName.style.textDecoration = 'none';
-        taskName.style.color = 'black';
     }
 }
-

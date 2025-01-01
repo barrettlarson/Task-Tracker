@@ -87,8 +87,4 @@ input[type='checkbox'] {
     cursor: pointer;
 }
 
-.cross-out #task-name {
-    text-decoration: line-through;
-    color: grey;
-}
 
