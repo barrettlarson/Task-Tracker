@@ -13,7 +13,7 @@ main {
     flex-direction: column;
     border: 0.2em solid black;
     border-radius: 2em;
-    width: 30vw;
+    width: 30%;
     height: 70vh;
     padding: 2.5% 5%;
     margin-top: 5em;
@@ -27,7 +27,7 @@ textarea {
     resize: none;
     border: none;
     outline: none;
-    font-size: 1vw;
+    font-size: 1.4em;
     background-color: #EEE2DF;
     white-space: nowrap;
     overflow-x: auto;
@@ -41,8 +41,8 @@ textarea {
 .enter-task {
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 0.125em solid black;
+    border-radius: 0.75em;
     height: 8%;
     padding: 0.5%;
     margin-bottom: 10%;
@@ -52,7 +52,7 @@ textarea {
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    border-bottom: 2px solid black;
+    border-bottom: 0.125em solid black;
     height: 8%;
     padding: 0.5%;
     margin-bottom: 2%;
@@ -67,7 +67,7 @@ textarea {
 }
 
 #task-name {
-    margin-left: 1em; 
+    margin-left: 3%; 
     flex-grow: 1; 
     overflow: hidden; 
     text-overflow: ellipsis; 
@@ -76,7 +76,7 @@ textarea {
 
 #trash {
     cursor: pointer;
-    width: 3em;
+    width: 10%;
     height: auto;
     mix-blend-mode: multiply;
 }
